@@ -55,7 +55,7 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
     }
 
     @Override
-    public E getFirsr() 
+    public E getFirst() 
     {
         return data.get(0);
     }
@@ -63,7 +63,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
     @Override
     public E remove() 
     {
-        return data.remove(0);
+        E minVal = getFirst();
+        data.set(0, data.get(data.size()-1));
+        data.setSize(data.size()-1);
+        if(data.size() > 1) pushDownRoot(0);
+        return minVal;
     }
 
     @Override
@@ -90,5 +94,34 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
     {
         data.clear();
     }
+    
+    public void pushDownRoot(int root)
+    {
+        int heapSize = data.size();
+        E value = data.get(root);
+        while(root < heapSize)
+        {
+            int childpos = left(root);
+            if(childpos < heapSize)
+            {
+                if((right(root) < heapSize) && ((data.get(childpos + 1)).compareTo(data.get(childpos)) < 0)) childpos++;
+                if((data.get(childpos)).compareTo(value) < 0)
+                {
+                    data.set(root, data.get(childpos));
+                    root = childpos;
+                } else
+                {
+                    data.set(root, value);
+                    return;
+                }
+            } else
+            {
+                data.set(root, value);
+                return;
+            }
+        }
+    }
+    
+    
     
 }
