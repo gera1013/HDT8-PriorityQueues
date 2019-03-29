@@ -7,7 +7,7 @@ package hdt8;
  */
 public interface PriorityQueue<E extends Comparable<E>> 
 {
-    public E getFirsr();
+    public E getFirst();
     // pre: !isEmpty()
     // post: returns the minimum value in priority queue
     

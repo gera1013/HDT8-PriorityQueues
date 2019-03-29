@@ -8,9 +8,9 @@ public class Paciente implements Comparable
 {
     private String nombre;
     private String sintoma;
-    private char emergencia;
+    private String emergencia;
     
-    public Paciente(String n, String s, char e)
+    public Paciente(String n, String s, String e)
     {
         this.nombre = n;
         this.sintoma = s;
@@ -20,7 +20,39 @@ public class Paciente implements Comparable
     @Override
     public int compareTo(Object o) 
     {
-        return 0;
+        Paciente temp = (Paciente) o;
+        return emergencia.compareTo(temp.getEmergencia());
     }
     
+    public void display()
+    {
+        System.out.println("Paciente: " + nombre + ", " + sintoma + " Prioridad: " + emergencia);
+    }
+    
+    /**
+     *
+     * @return variable nombre del paciente
+     */
+    public String getNombre()
+    {
+        return nombre;
+    }
+    
+    /**
+     *
+     * @return variable sintoma del paciente
+     */
+    public String getSintoma()
+    {
+        return sintoma;
+    }
+    
+    /**
+     *
+     * @return variable emergencia, la cual indica la prioridad del paciente
+     */
+    public String getEmergencia()
+    {
+        return emergencia;
+    }
 }
