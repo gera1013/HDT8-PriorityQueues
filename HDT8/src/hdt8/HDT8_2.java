@@ -1,4 +1,4 @@
-package hdt8;
+//package hdt8;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,8 +40,17 @@ public class HDT8_2
             String nombre = entries[0];
             String sintoma = entries[1];
             String emergencia = entries[2];
-            Paciente nuevo = new Paciente(nombre, sintoma, emergencia);
-            pacientesQueue.add(nuevo);
+            if(emergencia.length() > 1)
+            {
+                System.out.println("La prioridad del paciente " + nombre + " no existe");
+                System.out.println("No fue agregado a la cola, por favor revise el documento");
+                System.out.println("");
+            }
+            else
+            {
+                Paciente nuevo = new Paciente(nombre, sintoma, emergencia);
+                pacientesQueue.add(nuevo);
+            }
         }
         
         System.out.println("IMPLEMENTACION DEL PRIORITY QUEUE DEL JCF");
