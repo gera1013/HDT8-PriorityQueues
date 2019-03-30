@@ -21,6 +21,7 @@ public class HDT8
         VectorHeap pacientes = new VectorHeap();
         ArrayList<String> array = new ArrayList<>();        
         Scanner read = new Scanner(new File("pacientes.txt"));
+        Scanner scan = new Scanner(System.in);
         read.useDelimiter("\\r\\n");
         String data;
         
@@ -43,14 +44,19 @@ public class HDT8
         }
         
         System.out.println("IMPLEMENTACION LA CLASE VECTORHEAP");
-        System.out.println("EL orden para la atención de los pacientes ingresados es:");
+        System.out.println("");
         
         while(!pacientes.isEmpty())
         {
-            System.out.println("");
+            System.out.println("PRESIONE ENTER PARA VER AL SIGUIENTE PACIENTE");
+            String anything = scan.nextLine();
             Object pac = pacientes.remove();
             Paciente temp = (Paciente) pac;
             temp.display();
+            System.out.println("");
         }
+        
+        System.out.println("Ya no hay más pacientes en la cola");
+        System.out.println("");
     }
 }

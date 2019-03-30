@@ -22,6 +22,7 @@ public class HDT8_2
         PriorityQueue pacientesQueue = new PriorityQueue();
         ArrayList<String> array = new ArrayList<>();        
         Scanner read = new Scanner(new File("pacientes.txt"));
+        Scanner scan = new Scanner(System.in);
         read.useDelimiter("\\r\\n");
         String data;
         
@@ -44,14 +45,19 @@ public class HDT8_2
         }
         
         System.out.println("IMPLEMENTACION DEL PRIORITY QUEUE DEL JCF");
-        System.out.println("EL orden para la atención de los pacientes ingresados es:");
+        System.out.println("");
         
         while(!pacientesQueue.isEmpty())
         {
-            System.out.println("");
+            System.out.println("PRESIONE ENTER PARA VER AL SIGUIENTE PACIENTE");
+            String anything = scan.nextLine();
             Object pac = pacientesQueue.remove();
             Paciente temp = (Paciente) pac;
             temp.display();
+            System.out.println("");
         }
+        
+        System.out.println("Ya no hay más pacientes en la cola");
+        System.out.println("");
     }
 }

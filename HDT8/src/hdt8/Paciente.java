@@ -26,7 +26,7 @@ public class Paciente implements Comparable
     
     public void display()
     {
-        System.out.println(emergencia + "--> " + nombre + ", " + sintoma);
+        System.out.println(nombre + ", " + sintoma + " -- Prioridad: " + emergencia);
     }
     
     /**
