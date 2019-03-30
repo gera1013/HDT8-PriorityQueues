@@ -9,6 +9,7 @@ import java.util.Vector;
  */
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> 
 {
+
     protected Vector<E> data;
     
     public VectorHeap()
@@ -16,6 +17,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
         data = new Vector();
     }
     
+    /**
+     *
+     * @param v
+     */
     public VectorHeap(Vector<E> v)
     {
         int i;
@@ -26,21 +31,40 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
         }
     }
     
+    /**
+     *
+     * @param i
+     * @return
+     */
     protected static int parent(int i)
     {
         return (i-1)/2;
     }
     
+    /**
+     *
+     * @param i
+     * @return
+     */
     protected static int left(int i)
     {
         return 2*i+1;
     }
     
+    /**
+     *
+     * @param i
+     * @return
+     */
     protected static int right(int i)
     {
         return 2*(i+1);
     }
     
+    /**
+     *
+     * @param leaf
+     */
     protected void percolateUp(int leaf)
     {
         int parent = parent(leaf);
@@ -89,12 +113,19 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
         return data.size();
     }
 
+    /**
+     *
+     */
     @Override
     public void clear() 
     {
         data.clear();
     }
     
+    /**
+     *
+     * @param root
+     */
     public void pushDownRoot(int root)
     {
         int heapSize = data.size();
