@@ -33,7 +33,7 @@ public class VectorHeapTest {
     }
     
     /**
-     * Test of remove method, of class VectorHeap.
+     * Test del método remove method de la clase VectorHeap.
      */
     @Test
     public void testRemove() {
@@ -51,7 +51,7 @@ public class VectorHeapTest {
     }
 
     /**
-     * Test of add method, of class VectorHeap.
+     * Test del método add de la clase VectorHeap.
      */
     @Test
     public void testAdd() {

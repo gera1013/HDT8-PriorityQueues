@@ -35,10 +35,10 @@ public class HDT8_2
         
         for(String a : array)
         {
-            String [] b = a.split(", ");
-            String nombre = b[0];
-            String sintoma = b[1];
-            String emergencia = b[2];
+            String [] entries = a.split(", ");
+            String nombre = entries[0];
+            String sintoma = entries[1];
+            String emergencia = entries[2];
             Paciente nuevo = new Paciente(nombre, sintoma, emergencia);
             pacientesQueue.add(nuevo);
         }

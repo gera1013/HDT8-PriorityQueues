@@ -51,7 +51,6 @@ public class HDT8
             Object pac = pacientes.remove();
             Paciente temp = (Paciente) pac;
             temp.display();
-            
         }
     }
 }

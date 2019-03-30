@@ -6,9 +6,9 @@ package hdt8;
  */
 public class Paciente implements Comparable
 {
-    private String nombre;
-    private String sintoma;
-    private String emergencia;
+    private final String nombre;
+    private final String sintoma;
+    private final String emergencia;
     
     public Paciente(String n, String s, String e)
     {
@@ -26,7 +26,7 @@ public class Paciente implements Comparable
     
     public void display()
     {
-        System.out.println(nombre + ", " + sintoma + ", " + emergencia);
+        System.out.println(emergencia + "--> " + nombre + ", " + sintoma);
     }
     
     /**
